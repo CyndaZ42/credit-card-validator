@@ -26,7 +26,7 @@ function luhn_algorithm(cardNumber) {
     });
     cardArray.forEach(function(element) {
       if(x === 1) {
-        if (element < 5){
+        if (multiply(element, 2) < 10){
           cardDoubled.push(multiply(element, 2));
         }
         else{
@@ -37,8 +37,10 @@ function luhn_algorithm(cardNumber) {
       else{
       cardDoubled.push(element)
       x = 1;
-    }});
-
-
+     }});
+      cardDoubled.reverse();
+      return cardDoubled;
  }
+
+ //ui logic
 

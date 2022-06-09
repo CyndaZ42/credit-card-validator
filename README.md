@@ -69,3 +69,8 @@ test: combine digits of numbers > 9
 code: const card = "0998445533334452";
 luhn_algorithm(card);
 output:  [4, 5, 8, 4, 6, 3, 6, 3, 4, 5, 8, 4, 1, 9, 0, 0]
+
+test: reverse order of digits back to original
+code: const card = "0998445533334452";
+luhn_algorithm(card);
+output: [0, 0, 4, 8, 3, 6, 4, 8, 4, 5, 6, 3, 4, 5, 1, 9]
