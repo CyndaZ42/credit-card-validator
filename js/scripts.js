@@ -20,6 +20,7 @@ function luhn_algorithm(cardNumber) {
    cardArray = cardNumber.split("");
    cardArray.reverse();
    cardDoubled = [];
+   luhnOutput = 0;
    let x = 1;
    cardArray = cardArray.map(function(element) {
      return parseInt(element);
@@ -30,6 +31,7 @@ function luhn_algorithm(cardNumber) {
           cardDoubled.push(multiply(element, 2));
         }
         else{
+          console.log(subtract(9, element));
           cardDoubled.push(subtract(9, element));
         }
         x = 0;
@@ -39,7 +41,12 @@ function luhn_algorithm(cardNumber) {
       x = 1;
      }});
       cardDoubled.reverse();
-      return cardDoubled;
+      console.log(cardDoubled);
+      cardDoubled.forEach(function (element){
+        luhnOutput += element;
+        console.log(luhnOutput);
+      });
+      return luhnOutput;
  }
 
  //ui logic
