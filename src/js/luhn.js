@@ -18,3 +18,38 @@ Card.prototype.parse = function() {
    });
    return this.numArray;
 }
+
+Card.prototype.double = function() {
+  let x = 1;
+  let doubledNumber = []
+  this.numArray.forEach(function(element) {
+    if(x === 1) {
+      doubledNumber.push(element * 2);
+      x = 0;
+    }
+    else{
+    doubledNumber.push(element)
+    x = 1;
+   }});
+   return doubledNumber;
+}
+
+//Card.prototype.double = function() {
+//  let x = 1;
+//  let doubledNumber = []
+//  this.numArray.forEach(function(element) {
+//    if(x === 1) {
+//      if ((element* 2) < 10){
+//        doubledNumber.push(element * 2);
+//      }
+//      else{
+//        doubledNumber.push(element - 9);
+//      }
+//      x = 0;
+//    }
+//    else{
+//    doubledNumber.push(element)
+//    x = 1;
+//   }});
+//   return doubledNumber;
+//}

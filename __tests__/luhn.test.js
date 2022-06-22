@@ -24,4 +24,12 @@ describe('Card', () => {
     card.reverse();
     expect(card.parse()).toEqual([2, 5, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 8, 9, 9, 0]);
   });
+
+  test('should double every other digit', () => {
+    const card = new Card("0998445533334452");
+    card.split();
+    card.reverse();
+    card.parse();
+    expect(card.double()).toEqual([4, 5, 8, 4, 6, 3, 6, 3, 10, 5, 8, 4, 16, 9, 18, 0]);
+  });
 });
