@@ -78,5 +78,15 @@ describe('Card', () => {
     card.verify();
     expect(card.isValid).toEqual(true);
   });
+
+  test('return if the number is "valid"', () => {
+    const card = new Card("4102080880435620");
+    card.split();
+    card.reverse();
+    card.parse();
+    card.formula();
+    card.verify();
+    expect(card.isValid).toEqual(false);
+  });
   
 });
