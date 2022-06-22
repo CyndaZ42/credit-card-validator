@@ -54,3 +54,12 @@ Card.prototype.formula = function() {
    this.numArray = doubledNumber;
    return this.numArray;
 }
+
+Card.prototype.verify =  function() {
+  let validator = 0;
+  this.numArray.forEach(function(element) {
+    validator += element;
+  })
+  this.validator = validator;
+  return validator;
+};
