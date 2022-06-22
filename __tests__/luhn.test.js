@@ -32,4 +32,13 @@ describe('Card', () => {
     card.parse();
     expect(card.double()).toEqual([4, 5, 8, 4, 6, 3, 6, 3, 10, 5, 8, 4, 16, 9, 18, 0]);
   });
+
+  test('should double every other digit and add digits of numbers over 9', () => {
+    const card = new Card("0998445533334452");
+    card.split();
+    card.reverse();
+    card.parse();
+    expect(card.formula()).toEqual([4, 5, 8, 4, 6, 3, 6, 3, 1, 5, 8, 4, 7, 9, 9, 0]);
+  });
+
 });

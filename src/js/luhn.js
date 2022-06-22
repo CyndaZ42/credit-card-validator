@@ -34,22 +34,23 @@ Card.prototype.double = function() {
    return doubledNumber;
 }
 
-//Card.prototype.double = function() {
-//  let x = 1;
-//  let doubledNumber = []
-//  this.numArray.forEach(function(element) {
-//    if(x === 1) {
-//      if ((element* 2) < 10){
-//        doubledNumber.push(element * 2);
-//      }
-//      else{
-//        doubledNumber.push(element - 9);
-//      }
-//      x = 0;
-//    }
-//    else{
-//    doubledNumber.push(element)
-//    x = 1;
-//   }});
-//   return doubledNumber;
-//}
+Card.prototype.formula = function() {
+  let x = 1;
+  let doubledNumber = []
+  this.numArray.forEach(function(element) {
+    if(x === 1) {
+      if ((element* 2) <= 9){
+        doubledNumber.push(element * 2);
+      }
+      else{
+        doubledNumber.push((element * 2) - 9);
+      }
+      x = 0;
+    }
+    else{
+    doubledNumber.push(element)
+    x = 1;
+   }});
+   this.numArray = doubledNumber;
+   return this.numArray;
+}
