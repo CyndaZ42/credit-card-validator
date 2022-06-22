@@ -41,4 +41,13 @@ describe('Card', () => {
     expect(card.formula()).toEqual([4, 5, 8, 4, 6, 3, 6, 3, 1, 5, 8, 4, 7, 9, 9, 0]);
   });
 
+  test('reverse order of digits back to original', () => {
+    const card = new Card("0998445533334452");
+    card.split();
+    card.reverse();
+    card.parse();
+    card.formula()
+    expect(card.reverse()).toEqual([0, 9, 9, 7, 4, 8, 5, 1, 3, 6, 3, 6, 4, 8, 5, 4]);
+  });
+
 });
