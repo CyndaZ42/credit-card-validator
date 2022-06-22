@@ -61,5 +61,10 @@ Card.prototype.verify =  function() {
     validator += element;
   })
   this.validator = validator;
-  return validator;
+  if (this.validator.toString().at(1) === "0"){
+    this.isValid = true; 
+  } else {
+    this.isValid = false;
+  }
+  return this.isValid;
 };
