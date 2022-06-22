@@ -3,6 +3,6 @@ export default function Card(number) {
 }
 
 Card.prototype.luhn = function() {
-  cardArray = this.number.split("");
+   let cardArray = this.number.split("");
   return cardArray;
 }
