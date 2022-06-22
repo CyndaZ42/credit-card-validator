@@ -9,7 +9,19 @@ describe('Card', () => {
 
   test('should turn string into an array', () => {
     const card = new Card("0998445533334452");
-    expect(card.luhn()).toEqual(["0", "9", "9", "8", "4", "4", "5", "5", "3", "3", "3", "3", "4", "4", "5", "2"]);
-  })
+    expect(card.split()).toEqual(["0", "9", "9", "8", "4", "4", "5", "5", "3", "3", "3", "3", "4", "4", "5", "2"]);
+  });
 
+  test('should reverse the number', () => {
+    const card = new Card("0998445533334452");
+    card.split();
+    expect(card.reverse()).toEqual(['2', '5', '4', '4', '3', '3', '3', '3', '5', '5', '4', '4', '8', '9', '9', '0']);
+  });
+
+  test('should parse integers from strings', () => {
+    const card = new Card("0998445533334452");
+    card.split();
+    card.reverse();
+    expect(card.parse()).toEqual([2, 5, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 8, 9, 9, 0]);
+  });
 });

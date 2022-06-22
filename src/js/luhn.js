@@ -11,3 +11,10 @@ Card.prototype.reverse = function() {
   this.numArray.reverse();
   return this.numArray;
 }
+
+Card.prototype.parse = function() {
+  this.numArray = this.numArray.map(function(element) {
+    return parseInt(element);
+   });
+   return this.numArray;
+}
